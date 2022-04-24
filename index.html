@@ -4,36 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
     <title>Q'Bacan</title>
     <script src="https://kit.fontawesome.com/0563dd7483.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header class="head">
-        <nav class="menu section-styles">
-            <a class="menu-logo" href="">
-                <h3>Q'Bacan</h3>
-                <!-- icon -->
-            </a>
-            <div class="menu-nav">
-                <a href=""><h3>Home</h3></a>
-                <a href=""><h3>Products</h3></a>
-            </div>
-            <div class="menu-bnts-interactive">
-                <a href=""><i class="fa-solid fa-sun"></i></a>
-                <a href=""><i class="fa-solid fa-cart-shopping"></i><span id="interactive-count">0</span></a>
+    <header class="header">
+        <nav class="menu">
+            <div class="menu-content section-styles">
+                <a class="content-logo" href="#">
+                    <h3 class="logo-title">Q'Bacan</h3>
+                    <i class="fa-solid fa-skull logo-img"></i>
+                </a>
+                <div class="content-nav">
+                    <a href="#home"><h3>Home</h3></a>
+                    <a href="#products"><h3>Products</h3></a>
+                </div>
+                <div class="content-icons">
+                    <div class="icon-btn-cart">
+                        <a href=""><i class="fa-solid fa-cart-shopping"></i><span id="interactive-count" class="cart-count">0</span></a>
+                    </div>
+                    <button class="icon-toggle">
+                        <i class="open-btn fa-solid fa-bars"></i>
+                        <i class="cls-btn close-btn fa-solid fa-xmark"></i>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
     <main class="main">
-        <section class="home section-styles">
+        <section id="home" class="home section-styles">
             <div class="home-content">
-                <div class="cont-media">
-                    <img src="assets/img/package.png" alt="">
-                </div>
                 <div class="cont-info">
                     <h1 class="info-title">PACKAGE PIZZA BOX</h1>
                     <h3 class="info-subtit">Exclusive packaging design</h3>
@@ -49,23 +53,26 @@
                         <span class="rating-descr">4.0</span>
                     </div>
                 </div>
+                <div class="cont-media">
+                    <img src="assets/img/package.png" alt="">
+                </div>
             </div>
             <h2 class="cont-price">$12.00</h2>
             <button class="cont-price_btn">
                 <h3>ADD TO CART<i class="fa-solid fa-cart-shopping"></i></h3>
             </button>
         </section>
-        <section class="products section-styles">
+        <section id="products" class="products section-styles">
             <ul class="products-filter">
-                <li class="filter-item">
+                <li class="filter-item filter-item_line">
                     <h3>Show All</h3>
                     <span>All products</span>
                 </li>
-                <li class="filter-item">
+                <li class="filter-item filter-item_line">
                     <h3>Coffe Cups</h3>
                     <span>5 products</span>
                 </li>
-                <li class="filter-item">
+                <li class="filter-item filter-item_line">
                     <h3>Caps</h3>
                     <span>2 products</span>
                 </li>
@@ -86,9 +93,9 @@
                         <h3 class="cont-title">Caps <span class="cont-stock_info">| Stock: 2</span></h3>
                         <h4 class="cont-price_card">$10.00</h4>
                         <div class="cont-btn">
-                            <button><i class="fa-solid fa-plus"></i></button>
-                            <span>0</span>
                             <button><i class="fa-solid fa-minus"></i></button>
+                            <span>0</span>
+                            <button><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
                 </div>
@@ -103,9 +110,9 @@
                         <h3 class="cont-title">Coffe Cups <span class="cont-stock_info">| Stock: 5</span></h3>
                         <h4 class="cont-price_card">$5.00</h4>
                         <div class="cont-btn">
-                            <button><i class="fa-solid fa-plus"></i></button>
-                            <span>0</span>
                             <button><i class="fa-solid fa-minus"></i></button>
+                            <span>0</span>
+                            <button><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
                 </div>
@@ -120,9 +127,9 @@
                         <h3 class="cont-title">Shirts <span class="cont-stock_info">| Stock: 3</span></h3>
                         <h4 class="cont-price_card">$12.00</h4>
                         <div class="cont-btn">
-                            <button><i class="fa-solid fa-plus"></i></button>
-                            <span>0</span>
                             <button><i class="fa-solid fa-minus"></i></button>
+                            <span>0</span>
+                            <button><i class="fa-solid fa-plus"></i></button>
                         </div>
                     </div>
                 </div>
@@ -133,7 +140,7 @@
         <div class="foot-section">
             <div class="section-content">
                 <h3 class="content-title">Information</h3>
-                <p class="content-items">Lorem ipsum dolor elit.</p>
+                <p class="content-items">Q'Bacan - Ecuador</p>
             </div>
             <div class="section-content">
                 <h3 class="content-title">About Us</h3>
