@@ -26,7 +26,7 @@
                 </div>
                 <div class="content-icons">
                     <div class="icon-btn-cart">
-                        <a href=""><i class="fa-solid fa-cart-shopping"></i><span id="interactive-count" class="cart-count">0</span></a>
+                        <a class="btn-cart_active"><i class="fa-solid fa-cart-shopping"></i><span id="interactive-count" class="cart-count">0</span></a>
                     </div>
                     <button class="icon-toggle">
                         <i class="open-btn fa-solid fa-bars"></i>
@@ -36,9 +36,28 @@
             </div>
         </nav>
     </header>
-    <!-- <section class="modal-card">
-        
-    </section> -->
+    <section class="modal-card">
+        <div class="card-cart">
+            <i class="cart-icon-close fa-solid fa-xmark"></i>
+            <h2 class="card-title">My Cart</h2>
+            <div class="card-empty">
+                <img class="empty-img" src="assets/img/emptyCart.png" alt="">
+                <h3 class="empty-title">Your cart is empty</h3>
+                <p class="empty-text">Pon algo en el carrito please *-*</p>
+            </div>
+            <div class="card-details">
+                <span class="detail-items">
+                    <span class="detail-items_num">0</span>
+                     items
+                </span>
+                <span class="detail-price_total">$0.00</span>
+            </div>
+            <button class="card-btn_modal">
+                <i class="fa-solid fa-check"></i>
+                Checkout
+            </button>
+        </div>
+    </section>
     <main class="main">
         <section id="home" class="home section-styles">
             <div class="home-content">
