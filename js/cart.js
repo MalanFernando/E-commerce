@@ -1,6 +1,7 @@
 const addCart = document.querySelectorAll(".add-cart")
 const cardEmpty = document.querySelector(".card-empty");
-const btnRemoveItem = document.querySelector(".item-trash_btn")
+const btnRemoveItem = document.querySelector(".item-trash_btn");
+const cartCountBtn = document.querySelector(".cart-count");
 
 // funcionalidad de carrito
 
@@ -49,8 +50,11 @@ function addCardToCart(titleCard, priceCard, quantityCard, imgCard){
 }
 
 function updateTotalPrice(){
-    let total = 0;
+    let totalPrice = 0;
+    let totalItemsQuantity = 0;
+
     const detailPriceTotal = document.querySelector(".detail-price_total");
+    const detailQuantityTotal = document.querySelector(".detail-items_num");
     const cardItemsCart = document.querySelectorAll(".card-item_add");
 
     cardItemsCart.forEach(cardItem =>{
@@ -59,9 +63,12 @@ function updateTotalPrice(){
         const detailQuantity = cardItem.querySelector(".detail-quantity_numb");
         const detailQuantityNumber = Number(detailQuantity.textContent);
         
-        total = total + detailPriceItemUnit * detailQuantityNumber;
+        totalPrice = totalPrice + detailPriceItemUnit * detailQuantityNumber;
+        totalItemsQuantity += detailQuantityNumber;
     });
-    detailPriceTotal.innerHTML = `$${total.toFixed(2)}`;
+    detailPriceTotal.innerHTML = `$${totalPrice.toFixed(2)}`;
+    detailQuantityTotal.innerHTML = `${totalItemsQuantity}`;
+    cartCountBtn.innerHTML = `${totalItemsQuantity}`;
 }
 
 function removeItemCard(event){

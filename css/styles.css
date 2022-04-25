@@ -303,7 +303,7 @@ body{
 }
 
 .content-detail_item{
-    margin: .5rem;
+    margin: auto .5rem;
     text-align: left;
 }
 .detail-content_title{
