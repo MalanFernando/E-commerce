@@ -10,7 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/main.js" defer></script>
+    <script src="js/buttons.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -41,9 +42,24 @@
             <i class="cart-icon-close fa-solid fa-xmark"></i>
             <h2 class="card-title">My Cart</h2>
             <div class="card-empty">
-                <img class="empty-img" src="assets/img/emptyCart.png" alt="">
-                <h3 class="empty-title">Your cart is empty</h3>
-                <p class="empty-text">Pon algo en el carrito please *-*</p>
+                <!-- <img class="empty-img" src="assets/img/emptyCart.png" alt=""> -->
+                <div class="card-item_add">
+                    <img class="item-img_cont" src="assets/img/cap.png" alt="">
+                    <div class="content-detail_item">
+                        <h4 class="detail-content_title">title</h4>
+                        <span class="detail-price">$0.00</span>
+                        <div class="detail-content_btns">
+                            <button><i class="fa-solid fa-minus"></i></button>
+                            <span>0</span>
+                            <button><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <button class="item-trash_btn">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+                <!-- <h3 class="empty-title">Your cart is empty</h3>
+                <p class="empty-text">Pon algo en el carrito please *-*</p> -->
             </div>
             <div class="card-details">
                 <span class="detail-items">
@@ -105,12 +121,12 @@
                 </li>
             </ul>
             <div class="section-products">
-                <div class="products-card">
-                    <button class="card-btn_cart">
+                <div id="cap" class="products-card">
+                    <button class="card-btn_cart add-cart">
                         <i class="fa-solid fa-heart"></i>
                     </button>
                     <div class="card-img color-cap">
-                        <img src="assets/img/cap.png" alt="">
+                        <img class="img-product" src="assets/img/cap.png" alt="">
                     </div>
                     <div class="card-content">
                         <h3 class="cont-title">Caps <span class="cont-stock_info">| Stock: 2</span></h3>
@@ -122,12 +138,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="products-card">
-                    <button class="card-btn_cart">
+                <div id="cup" class="products-card">
+                    <button class="card-btn_cart add-cart">
                         <i class="fa-solid fa-heart"></i>
                     </button>
                     <div class="card-img color-cup">
-                        <img src="assets/img/cup.png" alt="">
+                        <img class="img-product" src="assets/img/cup.png" alt="">
                     </div>
                     <div class="card-content">
                         <h3 class="cont-title">Coffe Cups <span class="cont-stock_info">| Stock: 5</span></h3>
@@ -139,12 +155,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="products-card">
-                    <button class="card-btn_cart">
+                <div id="shirt" class="products-card">
+                    <button class="card-btn_cart add-cart">
                         <i class="fa-solid fa-heart"></i>
                     </button>
                     <div class="card-img color-shirt">
-                        <img src="assets/img/shirt.png" alt="">
+                        <img class="img-product" src="assets/img/shirt.png" alt="">
                     </div>
                     <div class="card-content">
                         <h3 class="cont-title">Shirts <span class="cont-stock_info">| Stock: 3</span></h3>
@@ -193,6 +209,5 @@
         </div>
         <p class="foot-copy">© Q'Bacan. All rigths reserved</p>
     </footer>
-    
 </body>
 </html>

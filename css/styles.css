@@ -6,6 +6,7 @@
     --colorMenuItems: #719981;
     --sectionColor: #cecece;
     --colorSmoothModal: #c4c9c0c4;
+    --colorItemAdded: #a1b6a3;
     --colorModalClose: #a16868;
     --ratingOff: #8d9494;
     --yellow: #d8973c;
@@ -201,15 +202,13 @@ body{
 .modal-show{
     left: 0;
 }
-
 .card-cart{
     background-color: var(--background);
     box-shadow: var(--sombraCards);
     border-radius: 4px;
     max-width: 450px;
     width: 80%;
-    text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     position: relative;
 }
 .cart-icon-close{
@@ -261,6 +260,56 @@ body{
 .card-btn_modal>i{
     margin-right: .5rem;
     font-size: .9rem;
+}
+
+/* Estilos de cardAdded to cart */
+.card-item_add{
+    background-color: var(--cardColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 2.5rem 0 0 0;
+    border-radius: 4px;
+}
+.item-img_cont{
+    background-color: var(--colorItemAdded);
+    width: 30%;
+    margin: auto 0;
+    padding: .20rem;
+    border-radius: 4px;
+    position: relative;
+    top: -15px;
+    left: -5px;
+}
+.content-detail_item{
+    padding: .5rem;
+}
+.detail-content_title{
+    display: flex;
+    margin: .4rem 0;
+    font-size: .8rem;
+}
+.detail-content_btns{
+    margin: .5rem 0 0 0;
+}
+.detail-content_btns>button{
+    background-color: var(--ratingOff);
+    border-radius: 4px;
+    border: none;
+    padding: .12rem .3rem;
+    cursor: pointer;
+}
+.detail-content_btns>span{
+    margin: 0 .5rem 0;
+}
+.item-trash_btn{
+    background: var(--colorModalClose);
+    border-radius: 0 4px 0 4px;
+    color: var(--colorFont);
+    border: none;
+    padding: .5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 

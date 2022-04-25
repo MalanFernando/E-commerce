@@ -7,7 +7,7 @@ const cartActiveBtn = document.querySelector(".btn-cart_active");
 const closeModalBtn = document.querySelector(".cart-icon-close")
 const modalShow = document.querySelector(".modal-card")
 
-
+// funcionalidad de botones
 toggleBtn.addEventListener("click", () =>{
     menuNav.classList.toggle("visibility")
     openBtn.classList.toggle("hidden-btn")
