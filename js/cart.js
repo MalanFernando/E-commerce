@@ -1,5 +1,6 @@
 const addCart = document.querySelectorAll(".add-cart")
 const cardEmpty = document.querySelector(".card-empty");
+const btnRemoveItem = document.querySelector(".item-trash_btn")
 
 // funcionalidad de carrito
 
@@ -13,14 +14,14 @@ function addCartChoose(event){
     
     const titleCard = cardChoosed.querySelector(".cont-title").textContent;
     const priceCard = cardChoosed.querySelector(".cont-price_card").textContent;
-    const btnQuantity = cardChoosed.querySelector(".cont-btn").textContent;
+    const quantityCard = cardChoosed.querySelector(".cont-quantity").textContent;
     const imgCard = cardChoosed.querySelector(".img-product").src;
 
-    addCardToCart(titleCard, priceCard, btnQuantity, imgCard);
+    addCardToCart(titleCard, priceCard, quantityCard, imgCard);
 }
 
 // function: add products to cart
-function addCardToCart(titleCard, priceCard, btnQuantity, imgCard){
+function addCardToCart(titleCard, priceCard, quantityCard, imgCard){
     const itemAdded = document.createElement("div");
 
     const itemCardContent = `
@@ -31,7 +32,7 @@ function addCardToCart(titleCard, priceCard, btnQuantity, imgCard){
             <span class="detail-price">${priceCard}</span>
             <div class="detail-content_btns">
                 <button><i class="fa-solid fa-minus"></i></button>
-                <span>${btnQuantity}</span>
+                <span class="detail-quantity_numb">${quantityCard}</span>
                 <button><i class="fa-solid fa-plus"></i></button>
             </div>
         </div>
@@ -41,4 +42,30 @@ function addCardToCart(titleCard, priceCard, btnQuantity, imgCard){
     </div>`;
     itemAdded.innerHTML = itemCardContent;
     cardEmpty.append(itemAdded);
+
+    itemAdded.querySelector(".item-trash_btn").addEventListener("click", removeItemCard)
+
+    updateTotalPrice()
+}
+
+function updateTotalPrice(){
+    let total = 0;
+    const detailPriceTotal = document.querySelector(".detail-price_total");
+    const cardItemsCart = document.querySelectorAll(".card-item_add");
+
+    cardItemsCart.forEach(cardItem =>{
+        const detailPriceItem = cardItem.querySelector(".detail-price");
+        const detailPriceItemUnit = Number(detailPriceItem.textContent.replace('$', ''));
+        const detailQuantity = cardItem.querySelector(".detail-quantity_numb");
+        const detailQuantityNumber = Number(detailQuantity.textContent);
+        
+        total = total + detailPriceItemUnit * detailQuantityNumber;
+    });
+    detailPriceTotal.innerHTML = `$${total.toFixed(2)}`;
+}
+
+function removeItemCard(event){
+    const btnRemove = event.target;
+    btnRemove.closest(".card-item_add").remove();
+    updateTotalPrice()
 }
