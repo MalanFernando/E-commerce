@@ -1,12 +1,34 @@
-const addCart = document.querySelectorAll(".add-cart")
+const products = document.getElementById("products");
+const addCartBtnHeart = document.querySelectorAll(".add-cart_btn-heart");
+const activeColorBtnHeart = document.querySelector(".btn_icon-heart");
+const btnAddCartPlus = document.querySelectorAll(".btn-cart_plus");
 const cardEmpty = document.querySelector(".card-empty");
 const btnRemoveItem = document.querySelector(".item-trash_btn");
 const cartCountBtn = document.querySelector(".cart-count");
 
 // funcionalidad de carrito
 
-addCart.forEach(addCartBtn=>{
-    addCartBtn.addEventListener("click", addCartChoose);
+
+// function to add products with button heart
+// addCartBtnHeart.forEach(addCartBtnHeartActive=>{
+//     addCartBtnHeartActive.addEventListener("click", addCartChoose)
+// })
+products.addEventListener("click", (e)=>{
+    let active
+    if (e.target.textContent === " ") {
+        active = e.target.classList.toggle("active");
+        if (active) {
+            addCartChoose(e)
+         }else{
+            // actualizar el carrito a cero
+         }
+    }
+})
+
+
+// function to add products with button plus
+btnAddCartPlus.forEach(btnAddCartPlusBtn=>{
+    btnAddCartPlusBtn.addEventListener("click", addCartChoose);
 })
 
 function addCartChoose(event){
@@ -46,9 +68,12 @@ function addCardToCart(titleCard, priceCard, quantityCard, imgCard){
 
     itemAdded.querySelector(".item-trash_btn").addEventListener("click", removeItemCard)
 
+    itemAdded
+    
     updateTotalPrice()
 }
 
+// function: update price to cart and update quantity to cart
 function updateTotalPrice(){
     let totalPrice = 0;
     let totalItemsQuantity = 0;
@@ -62,7 +87,7 @@ function updateTotalPrice(){
         const detailPriceItemUnit = Number(detailPriceItem.textContent.replace('$', ''));
         const detailQuantity = cardItem.querySelector(".detail-quantity_numb");
         const detailQuantityNumber = Number(detailQuantity.textContent);
-        
+
         totalPrice = totalPrice + detailPriceItemUnit * detailQuantityNumber;
         totalItemsQuantity += detailQuantityNumber;
     });
@@ -71,6 +96,17 @@ function updateTotalPrice(){
     cartCountBtn.innerHTML = `${totalItemsQuantity}`;
 }
 
+// function: update quantity to card
+// function udpateQuantityCard (){
+    // const contQuatityCard = document.querySelector(".cont-quantity");
+
+    // const contQuantityCardNumber = cardItem.querySelector(".cont")
+
+// }
+
+
+
+// function: remove items to cart
 function removeItemCard(event){
     const btnRemove = event.target;
     btnRemove.closest(".card-item_add").remove();

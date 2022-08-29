@@ -280,14 +280,14 @@ body{
 .card-item_add{
     background-color: var(--cardColor);
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
     margin: .8rem 0 2rem 0;
     border-radius: 4px;
+    position: relative;
 }
 .item-img_cont{
     background-color: var(--colorItemAdded);
-    width: 30%;
+    max-width: 20%;
     padding: .25rem;
     border-radius: 4px;
     position: relative;
@@ -303,7 +303,7 @@ body{
 }
 
 .content-detail_item{
-    margin: auto .5rem;
+    margin: .5rem 1rem;
     text-align: left;
 }
 .detail-content_title{
@@ -325,7 +325,10 @@ body{
     margin: 0 .4rem 0;
 }
 .item-trash_btn{
+    position: absolute;
+    right: 0;
     background: var(--colorModalClose);
+    justify-content: flex-end;
     border-radius: 0 4px 0 4px;
     color: var(--colorFont);
     border: none;
@@ -471,15 +474,15 @@ body{
     top: 0;
     right: 0;
     border: none;
-    padding: .3rem;
     margin: .5rem;
     font-size: 1.5rem;
     cursor: pointer;
 }
-.card-btn_cart>i{
+.btn_icon-heart{
+    padding: .3rem;
     color: var(--cardColor);
 }
-.card-btn_cart:active i{
+.active{
     color: var(--colorShopActive);
 }
 
